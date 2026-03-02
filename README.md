@@ -2,6 +2,8 @@
 
 The **Playful Sparkle - Important Security Notification** extension for OpenCart 4.x+ allows store owners to quickly remove the built in **Important Security Notification** message shown in the OpenCart admin area. Designed for clean admin UX, it suppresses the recurring banner without changing core files, keeping your dashboard tidy while you manage your store. The extension is lightweight, easy to install, and integrates seamlessly with OpenCart 4.x+. Ideal for store owners and developers who want a quieter admin interface, it requires no technical expertise to set up and can be enabled or disabled at any time.
 
+![preview](https://github.com/user-attachments/assets/99d36452-34e4-4378-8e43-f5d9b66eb4be)
+
 ---
 
 ## Features
