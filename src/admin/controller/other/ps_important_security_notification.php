@@ -40,7 +40,7 @@ class PsImportantSecurityNotification extends \Opencart\System\Engine\Controller
 
         $data['breadcrumbs'][] = [
             'text' => $this->language->get('heading_title'),
-            'href' => $this->url->link('extension/other/ps_important_security_notification', 'user_token=' . $this->session->data['user_token'], true),
+            'href' => $this->url->link('extension/ps_important_security_notification/other/ps_important_security_notification', 'user_token=' . $this->session->data['user_token'], true),
         ];
 
 
