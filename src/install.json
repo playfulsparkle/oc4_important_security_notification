@@ -3,7 +3,7 @@
   "description": "Hide the admin Important Security Notification banner in OpenCart, keep the dashboard clean, and reduce daily admin clutter.",
   "code": "ps_important_security_notification",
   "license": "GPL",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Playful Sparkle",
   "link": "https://github.com/playfulsparkle/oc4_important_security_notification.git"
 }

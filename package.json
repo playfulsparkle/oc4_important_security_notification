@@ -1,6 +1,6 @@
 {
   "name": "oc4_important_security_notification",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Playful Sparkle - Important Security Notification for OpenCart 4",
   "main": "index.js",
   "scripts": {

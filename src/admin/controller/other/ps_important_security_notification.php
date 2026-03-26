@@ -126,7 +126,16 @@ class PsImportantSecurityNotification extends \Opencart\System\Engine\Controller
         return $result;
     }
 
-    public function eventAdminViewCommonDashboardBefore(string &$route, array &$args, string &$template): void
+    /**
+     * Event: admin/view/common/dashboard/before
+     *
+     * @param string $route
+     * @param array $args
+     * @param string $output
+     *
+     * @return void
+     */
+    public function eventAdminViewCommonDashboardBefore(&$route, &$args, &$output)
     {
         if (!$this->config->get('other_ps_important_security_notification_status')) {
             return;
@@ -134,9 +143,10 @@ class PsImportantSecurityNotification extends \Opencart\System\Engine\Controller
 
         $this->load->model('extension/ps_important_security_notification/other/ps_important_security_notification');
 
-        $headerViews = $this->model_extension_ps_important_security_notification_other_ps_important_security_notification->replaceAdminViewCommonDashboarViews($args);
 
-        $template = $this->replaceViews($route, $template, $headerViews);
+        $views = $this->model_extension_ps_important_security_notification_other_ps_important_security_notification->replaceAdminViewCommonDashboarViews($args);
+
+        $output = $this->replaceViews($route, $output, $views);
     }
 
     /**
@@ -309,7 +319,7 @@ class PsImportantSecurityNotification extends \Opencart\System\Engine\Controller
      * If positions are specified, the method performs replacements only at those positions.
      *
      * @param string $route The route associated with the template.
-     * @param string $template The name of the template to be processed.
+     * @param string|null $template The name of the template to be processed.
      * @param array $views An array of associative arrays where each associative array contains:
      *                     - string 'search': The string to search for in the template.
      *                     - string 'replace': The string to replace the 'search' string with.
@@ -319,8 +329,16 @@ class PsImportantSecurityNotification extends \Opencart\System\Engine\Controller
      *
      * @return mixed The modified template content after performing the replacements.
      */
-    protected function replaceViews(string $route, string $template, array $views): mixed
+    protected function replaceViews(string $route, string|null $template, array $views): mixed
     {
+        if (is_null($template)) {
+            $template = '';
+        }
+
+        if (empty($views)) {
+            return $this->getTemplateBuffer($route, $template);
+        }
+
         $output = $this->getTemplateBuffer($route, $template);
 
         foreach ($views as $view) {
