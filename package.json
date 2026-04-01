@@ -9,9 +9,13 @@
   "keywords": [
     "opencart",
     "opencart4",
+    "opencart-extension",
     "playfulsparkle",
     "security",
-    "notification"
+    "notification",
+    "admin",
+    "remove-banner",
+    "hide-notification"
   ],
   "author": "zsoltoroszlany82 <zsolt.oroszlany@playfulsparkle.com>",
   "license": "GPL",
